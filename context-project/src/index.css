@@ -7,6 +7,18 @@
 	--primary-color: #646cff;
 	--primary-color-hover: #535bf2;
 	--button-color: #1a1a1a;
+	/* Portfolio-specific dark theme variables */
+	--card-background: rgba(255, 255, 255, 0.05);
+	--card-border: rgba(255, 255, 255, 0.1);
+	--card-hover-border: rgba(100, 108, 255, 0.5);
+	--section-background: rgba(255, 255, 255, 0.02);
+	--form-background: rgba(255, 255, 255, 0.05);
+	--form-border: rgba(255, 255, 255, 0.1);
+	--hero-background: linear-gradient(135deg, rgba(100, 108, 255, 0.1), rgba(255, 255, 255, 0.05));
+	--contact-background: linear-gradient(135deg, rgba(100, 108, 255, 0.05), rgba(255, 107, 107, 0.05));
+	--shadow-color: rgba(0, 0, 0, 0.3);
+	--tech-tag-background: rgba(100, 108, 255, 0.2);
+	--tech-tag-border: rgba(100, 108, 255, 0.3);
 	color: var(--text-color);
 	background-color: var(--background-color);
 
@@ -23,6 +35,18 @@ html[data-theme='light'] {
 	--background-color: #ffffff;
 	--primary-color-hover: #747bff;
 	--button-color: #f9f9f9;
+	/* Portfolio-specific light theme variables */
+	--card-background: rgba(0, 0, 0, 0.03);
+	--card-border: rgba(0, 0, 0, 0.1);
+	--card-hover-border: rgba(100, 108, 255, 0.3);
+	--section-background: rgba(0, 0, 0, 0.02);
+	--form-background: rgba(0, 0, 0, 0.03);
+	--form-border: rgba(0, 0, 0, 0.15);
+	--hero-background: linear-gradient(135deg, rgba(100, 108, 255, 0.08), rgba(0, 0, 0, 0.02));
+	--contact-background: linear-gradient(135deg, rgba(100, 108, 255, 0.05), rgba(255, 107, 107, 0.05));
+	--shadow-color: rgba(0, 0, 0, 0.1);
+	--tech-tag-background: rgba(100, 108, 255, 0.1);
+	--tech-tag-border: rgba(100, 108, 255, 0.2);
 	color-scheme: none;
 }
 

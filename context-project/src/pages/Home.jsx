@@ -1,15 +1,13 @@
-import { Link } from 'react-router';
+import Hero from '../components/Hero';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
 
 export default function Home() {
 	return (
-		<div>
-			<h1>Welcome to our website</h1>
-			<p>
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis recusandae labore explicabo quam
-				voluptatem ducimus sit esse rem voluptatum, eveniet eligendi repudiandae. Magni aliquid id debitis ex
-				architecto ipsam et.
-			</p>
-			<Link to={'/signin'}>Sign in</Link>
+		<div className="home">
+			<Hero />
+			<Projects />
+			<Contact />
 		</div>
 	);
 }

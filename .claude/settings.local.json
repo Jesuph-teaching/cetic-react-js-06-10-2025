@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\Users\\pc\\WORKSPACE\\teaching\\cetic\\context-project\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

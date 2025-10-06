@@ -6,11 +6,13 @@ export default function ThemeSwitcher() {
 
 	return (
 		<button
+			className="theme-switcher"
 			onClick={() => {
 				setTheme(theme === 'light' ? 'dark' : 'light');
 			}}
+			title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
 		>
-			{theme}
+			{theme === 'light' ? '🌙' : '☀️'}
 		</button>
 	);
 }
