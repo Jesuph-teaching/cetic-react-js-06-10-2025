@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 const navigationItems = [
 	{
 		title: 'Home',
@@ -14,6 +16,11 @@ const navigationItems = [
 		link: '/services',
 		icon: '',
 	},
+	{
+		title: 'Signin',
+		link: '/signin',
+		icon: '',
+	},
 ];
 
 export default function NavItems() {
@@ -22,7 +29,7 @@ export default function NavItems() {
 			{navigationItems.map((elm) => (
 				<li key={elm.title}>
 					{elm.icon}
-					<a href={elm.link}>{elm.title}</a>
+					<Link to={elm.link}>{elm.title}</Link>
 				</li>
 			))}
 		</ul>

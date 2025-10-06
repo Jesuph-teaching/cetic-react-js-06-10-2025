@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import UserContext from '../../contexts/UserContext';
 
 export default function SignIn() {
