@@ -1,8 +1,6 @@
-import { useContext } from 'react';
-import UserContext from '../contexts/UserContext';
+import useUser from '../hooks/useUser';
 
 export default function Navbar() {
-	const context = useContext(UserContext);
-	console.log(context);
-	return <div>Navbar</div>;
+	const { username } = useUser();
+	return <div>{username}</div>;
 }
