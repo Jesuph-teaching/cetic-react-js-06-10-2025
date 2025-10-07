@@ -4,12 +4,10 @@ const navigationItems = [
 	{
 		title: 'Home',
 		link: '/',
-		icon: '',
 	},
 	{
 		title: 'About Us',
 		link: '/about-us',
-		icon: '',
 	},
 	{
 		title: 'Our services',
