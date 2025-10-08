@@ -15,7 +15,7 @@ import { useState } from 'react';
 
 const students: StudentI[] = [
 	{
-		id: '1',
+		id: 1,
 		firstName: 'John',
 		lastName: 'Doe',
 		level: '1AP',
@@ -30,7 +30,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '2',
+		id: 2,
 		firstName: 'Alice',
 		lastName: 'Smith',
 		level: '2AP',
@@ -45,7 +45,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '3',
+		id: 3,
 		firstName: 'Yasmine',
 		lastName: 'Benkhelifa',
 		level: '3AP',
@@ -60,7 +60,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '4',
+		id: 4,
 		firstName: 'Walid',
 		lastName: 'Boualem',
 		level: '4AP',
@@ -75,7 +75,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '5',
+		id: 5,
 		firstName: 'Imane',
 		lastName: 'Ait Ahmed',
 		level: '2AP',
@@ -90,7 +90,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '6',
+		id: 6,
 		firstName: 'Rachid',
 		lastName: 'Ziani',
 		level: '5AP',
@@ -105,7 +105,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '7',
+		id: 7,
 		firstName: 'Sara',
 		lastName: 'Brahimi',
 		level: '1AP',
@@ -120,7 +120,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '8',
+		id: 8,
 		firstName: 'Adel',
 		lastName: 'Cherif',
 		level: '3AP',
@@ -135,7 +135,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '9',
+		id: 9,
 		firstName: 'Nour',
 		lastName: 'Saadi',
 		level: '4AP',
@@ -150,7 +150,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '10',
+		id: 10,
 		firstName: 'Khaled',
 		lastName: 'Mebarki',
 		level: '5AP',
@@ -165,7 +165,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '11',
+		id: 11,
 		firstName: 'Lina',
 		lastName: 'Boussaid',
 		level: '2AP',
@@ -180,7 +180,7 @@ const students: StudentI[] = [
 		},
 	},
 	{
-		id: '12',
+		id: 12,
 		firstName: 'Omar',
 		lastName: 'Guedjati',
 		level: '1AP',
@@ -246,10 +246,11 @@ const columns = [
 
 export default function Students() {
 	const [data, setData] = useState(students);
+	const [open, setOpen] = useState(false);
 
 	return (
 		<div className="p-4 flex flex-col gap-2 ">
-			<Dialog>
+			<Dialog open={open} onOpenChange={setOpen}>
 				<DialogTrigger asChild>
 					<Button className="ml-auto">Add new student</Button>
 				</DialogTrigger>
@@ -261,11 +262,14 @@ export default function Students() {
 							information including the student's name, birthdate, gender, level, and parent details.
 						</DialogDescription>
 					</DialogHeader>
-					<StudentForm
-						onStudentSubmitting={(student) => {
-							setData([...data, student]);
-						}}
-					/>
+					<div className="max-h-[60vh] overflow-auto">
+						<StudentForm
+							onStudentSubmitting={(student) => {
+								setData([...data, student]);
+								setOpen(false);
+							}}
+						/>
+					</div>
 				</DialogContent>
 			</Dialog>
 			<DataTable columns={columns} data={data} />
