@@ -1,4 +1,6 @@
-import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import { DataTable } from '@/components/DataTable';
+import { Button } from '@/components/ui/button';
+import { createColumnHelper, type ColumnDef } from '@tanstack/react-table';
 import { useState } from 'react';
 interface StudentI {
 	id: string;
@@ -76,53 +78,34 @@ const columns = [
 			);
 		},
 	}),
-];
+	columnHelper.accessor('birthdate', {
+		header: 'Birthdate',
+		cell(ctx) {
+			return ctx.getValue().toLocaleString('FR-dz', {
+				day: 'numeric',
+				year: 'numeric',
+				month: 'long',
+			});
+		},
+	}),
+	columnHelper.group({
+		header: 'Parent',
+
+		columns: [
+			columnHelper.accessor('parents.firstName', { header: 'First Name' }),
+			columnHelper.accessor('parents.lastName', { header: 'Last Name' }),
+			columnHelper.accessor('parents.phone', { header: 'Phone number' }),
+		],
+	}),
+] as ColumnDef<StudentI>[];
 
 export default function Students() {
 	const [data, setData] = useState(students);
-	const table = useReactTable({
-		data,
-		columns,
-		getCoreRowModel: getCoreRowModel(),
-	});
 
 	return (
-		<table className="border">
-			<thead className="border">
-				{table.getHeaderGroups().map((headerGroup) => (
-					<tr key={headerGroup.id}>
-						{headerGroup.headers.map((header) => (
-							<th key={header.id}>
-								{header.isPlaceholder
-									? null
-									: flexRender(header.column.columnDef.header, header.getContext())}
-							</th>
-						))}
-					</tr>
-				))}
-			</thead>
-			<tbody className="border">
-				{table.getRowModel().rows.map((row) => (
-					<tr className="border" key={row.id}>
-						{row.getVisibleCells().map((cell) => (
-							<td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-						))}
-					</tr>
-				))}
-			</tbody>
-			<tfoot>
-				{table.getFooterGroups().map((footerGroup) => (
-					<tr key={footerGroup.id}>
-						{footerGroup.headers.map((header) => (
-							<th key={header.id}>
-								{header.isPlaceholder
-									? null
-									: flexRender(header.column.columnDef.footer, header.getContext())}
-							</th>
-						))}
-					</tr>
-				))}
-			</tfoot>
-		</table>
+		<div className="p-4">
+			<Button>Add new student</Button>
+			<DataTable columns={columns} data={data} />
+		</div>
 	);
 }
