@@ -2,6 +2,41 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+:root {
+	--color-primary: var(
+		--color-blue-500,
+		rgb(0, 123, 255)
+	);
+	--color-primary-content: rgb(255, 255, 255);
+
+	--color-secondary: rgb(34, 34, 34);
+
+	--font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn {
+	--btn-color: var(--color-primary);
+	--btn-color-content: var(--color-primary-content);
+	--padding-size: 0.75rem 1.5rem;
+
+	color: var(--color-primary-content);
+	background-color: var(--btn-color);
+	border: 1px solid var(--btn-color);
+	padding: var(--padding-size);
+	.icon {
+		width: 1.5rem;
+		height: 1.5rem;
+		vertical-align: middle;
+		fill: var(--btn-color-content);
+	}
+
+	&.btn-secondary {
+		--btn-color: var(--color-secondary);
+		--btn-color-content: var(--color-primary-content);
+	}
+	&.large {
+		--padding-size: 1.5rem 3rem;
+	}
+}
 body {
 	background-color: rgb(237, 237, 237);
 }
@@ -10,17 +45,18 @@ nav {
 	justify-content: space-between;
 	background-color: rgb(107, 193, 210);
 	padding: 1rem 2rem;
+	ul {
+		/* display: flex; */
+		display: none;
+		list-style: none;
+		gap: 1rem;
+		li a {
+			font-size: 1.5rem;
+			color: white;
+		}
+	}
 }
-nav ul {
-	/* display: flex; */
-	display: none;
-	list-style: none;
-	gap: 1rem;
-}
-nav ul li a {
-	font-size: 1.5rem;
-	color: white;
-}
+
 [data-sidebar='closed'] aside {
 	display: none;
 }
