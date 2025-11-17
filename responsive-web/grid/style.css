@@ -1,0 +1,32 @@
+.container {
+	width: 100%;
+	display: grid;
+	height: 100vh;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(350px, 1fr)
+	);
+}
+* {
+	margin: 0;
+}
+.child {
+	border: 1px solid black;
+	background-color: aqua;
+	font-size: 48px;
+	width: 200px;
+}
+.child:nth-child(6) {
+	grid-row: 2 span;
+}
+
+.selected {
+	order: -1;
+	background-color: red;
+}
+.text {
+	font-size: 30px;
+}
+.inner-text {
+	font-size: 2em;
+}

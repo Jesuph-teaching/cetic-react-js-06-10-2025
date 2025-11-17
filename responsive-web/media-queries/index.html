@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body data-sidebar="closed">
+		<nav>
+			<div>
+				<h2>Logo</h2>
+			</div>
+			<button class="menu-toggle">Menu</button>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li>
+					<a href="media-queries.html"
+						>Media Queries</a
+					>
+				</li>
+				<li><a href="flexbox.html">Flexbox</a></li>
+				<li><a href="grid.html">Grid</a></li>
+			</ul>
+		</nav>
+		<aside>
+			<h3>Sidebar</h3>
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+			</ul>
+		</aside>
+        <main>
+            <h1>Media Queries</h1>
+            <p>
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos eaque suscipit ab illum, enim eveniet obcaecati sed! Earum, excepturi incidunt accusamus ad porro, ipsam accusantium quisquam, recusandae voluptates animi nihil?
+            </p>
+            <p class="tablet-only">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nemo tenetur blanditiis ipsam sapiente incidunt ab fugit nulla saepe illo. Laboriosam quae debitis, aut explicabo accusamus distinctio amet asperiores corporis?
+            </p>
+            <p class="portrait-only">
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis maiores saepe unde voluptates illo deserunt laudantium. Quibusdam aspernatur a velit sint voluptatem nam officiis, eaque distinctio provident quasi illum quidem.
+            </p>
+            <button class="large-height">
+                Large Height Button
+            </button>
+		<script>
+			const menuToggle =
+				document.querySelector('.menu-toggle');
+			const body = document.body;
+			menuToggle.addEventListener('click', () => {
+				if (
+					body.getAttribute('data-sidebar') ===
+					'closed'
+				) {
+					body.setAttribute(
+						'data-sidebar',
+						'open'
+					);
+				} else {
+					body.setAttribute(
+						'data-sidebar',
+						'closed'
+					);
+				}
+			});
+		</script>
+	</body>
+</html>
