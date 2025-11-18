@@ -28,7 +28,7 @@ function App() {
 				</ul>
 				<button
 					type="button"
-					className="absolute right-2 top-2 md:hidden"
+					className="absolute text-yamina right-2  top-2 md:hidden"
 					onClick={() => {
 						setOpen(false);
 					}}
@@ -63,111 +63,28 @@ function App() {
 					</button>
 				</nav>
 			</header>
-			<main className="flex-1 md:col-start-3 md:-col-end-1 overflow-auto">
+			<main className="flex-1 @container/main md:col-start-3 md:-col-end-1 overflow-auto">
 				<h1>Main content</h1>
 				<p>open : {String(open)}</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur
-					adipisicing elit. Laudantium quasi,
-					provident corrupti voluptates enim
-					reprehenderit neque eum voluptate, nihil
-					tempore ipsa. Ullam a, cupiditate
-					expedita qui quidem perferendis
-					veritatis soluta, laborum doloremque
-					sint dolore consequatur deserunt earum,
-					accusamus impedit? Recusandae nemo rem
-					doloremque voluptate laboriosam minus
-					libero necessitatibus at neque id
-					commodi, reprehenderit quidem incidunt
-					sapiente veniam nisi consequatur dicta
-					quia assumenda tenetur laudantium fugiat
-					fuga quis ratione! Architecto nemo alias
-					necessitatibus laudantium! Aspernatur
-					nemo eius laudantium quae id aliquid
-					nihil tempora nisi optio hic animi
-					maiores deleniti, provident cum saepe
-					illo. Praesentium incidunt ratione cum
-					ipsum repudiandae. Cum tempora quidem,
-					vero in perspiciatis, magni earum
-					mollitia soluta ipsum veniam tempore,
-					pariatur enim. Quam voluptatibus, vitae
-					consequatur perspiciatis totam
-					perferendis repudiandae quis maxime
-					optio rerum, cupiditate cumque aliquam
-					ea saepe ab quibusdam libero et officia
-					in? Perspiciatis dolorum delectus
-					praesentium vel? Sit fugiat voluptatem
-					omnis. Consequuntur explicabo inventore
-					quasi hic.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur
-					adipisicing elit. Laudantium quasi,
-					provident corrupti voluptates enim
-					reprehenderit neque eum voluptate, nihil
-					tempore ipsa. Ullam a, cupiditate
-					expedita qui quidem perferendis
-					veritatis soluta, laborum doloremque
-					sint dolore consequatur deserunt earum,
-					accusamus impedit? Recusandae nemo rem
-					doloremque voluptate laboriosam minus
-					libero necessitatibus at neque id
-					commodi, reprehenderit quidem incidunt
-					sapiente veniam nisi consequatur dicta
-					quia assumenda tenetur laudantium fugiat
-					fuga quis ratione! Architecto nemo alias
-					necessitatibus laudantium! Aspernatur
-					nemo eius laudantium quae id aliquid
-					nihil tempora nisi optio hic animi
-					maiores deleniti, provident cum saepe
-					illo. Praesentium incidunt ratione cum
-					ipsum repudiandae. Cum tempora quidem,
-					vero in perspiciatis, magni earum
-					mollitia soluta ipsum veniam tempore,
-					pariatur enim. Quam voluptatibus, vitae
-					consequatur perspiciatis totam
-					perferendis repudiandae quis maxime
-					optio rerum, cupiditate cumque aliquam
-					ea saepe ab quibusdam libero et officia
-					in? Perspiciatis dolorum delectus
-					praesentium vel? Sit fugiat voluptatem
-					omnis. Consequuntur explicabo inventore
-					quasi hic.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur
-					adipisicing elit. Laudantium quasi,
-					provident corrupti voluptates enim
-					reprehenderit neque eum voluptate, nihil
-					tempore ipsa. Ullam a, cupiditate
-					expedita qui quidem perferendis
-					veritatis soluta, laborum doloremque
-					sint dolore consequatur deserunt earum,
-					accusamus impedit? Recusandae nemo rem
-					doloremque voluptate laboriosam minus
-					libero necessitatibus at neque id
-					commodi, reprehenderit quidem incidunt
-					sapiente veniam nisi consequatur dicta
-					quia assumenda tenetur laudantium fugiat
-					fuga quis ratione! Architecto nemo alias
-					necessitatibus laudantium! Aspernatur
-					nemo eius laudantium quae id aliquid
-					nihil tempora nisi optio hic animi
-					maiores deleniti, provident cum saepe
-					illo. Praesentium incidunt ratione cum
-					ipsum repudiandae. Cum tempora quidem,
-					vero in perspiciatis, magni earum
-					mollitia soluta ipsum veniam tempore,
-					pariatur enim. Quam voluptatibus, vitae
-					consequatur perspiciatis totam
-					perferendis repudiandae quis maxime
-					optio rerum, cupiditate cumque aliquam
-					ea saepe ab quibusdam libero et officia
-					in? Perspiciatis dolorum delectus
-					praesentium vel? Sit fugiat voluptatem
-					omnis. Consequuntur explicabo inventore
-					quasi hic.
-				</p>
+				<div
+					id="cards-holder"
+					className="grid w-full grid-cols-1  @md/main:grid-cols-2 @xl/main:grid-cols-3 @4xl/main:grid-cols-4 @6xl/main:grid-cols-5 gap-4 p-4"
+				>
+					{Array.from({ length: 20 }, (_, i) => (
+						<div
+							key={i}
+							className="bg-white rounded-lg shadow p-4"
+						>
+							<h2 className="text-lg font-semibold mb-2">
+								Card Title {i + 1}
+							</h2>
+							<p className="text-gray-600">
+								This is a description for
+								card {i + 1}.
+							</p>
+						</div>
+					))}
+				</div>
 			</main>
 			<footer className="text-center md:col-start-3 md:-col-end-1">
 				<p>All rights reserved © 2025</p>
