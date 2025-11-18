@@ -1,5 +1,8 @@
 import { CircleX, Menu } from 'lucide-react';
 import { useState } from 'react';
+import { Button } from './components/ui/button';
+import ResponsiveDialog from './components/ResponsiveDialog';
+import { HoverCardDemo } from './components/HoverCardDemo';
 
 function App() {
 	const [open, setOpen] = useState(false);
@@ -28,7 +31,7 @@ function App() {
 				</ul>
 				<button
 					type="button"
-					className="absolute text-yamina right-2  top-2 md:hidden"
+					className="absolute text-yamina bg-yamina right-2  top-2 md:hidden"
 					onClick={() => {
 						setOpen(false);
 					}}
@@ -85,6 +88,8 @@ function App() {
 						</div>
 					))}
 				</div>
+				<ResponsiveDialog />
+				<HoverCardDemo />
 			</main>
 			<footer className="text-center md:col-start-3 md:-col-end-1">
 				<p>All rights reserved © 2025</p>
