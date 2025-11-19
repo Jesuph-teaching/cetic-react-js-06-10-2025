@@ -1,6 +1,5 @@
 import { CircleX, Menu } from 'lucide-react';
 import { useState } from 'react';
-import { Button } from './components/ui/button';
 import ResponsiveDialog from './components/ResponsiveDialog';
 import { HoverCardDemo } from './components/HoverCardDemo';
 

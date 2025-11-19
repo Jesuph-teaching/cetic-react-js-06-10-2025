@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+#root {
+	@apply flex flex-col min-h-screen;
+}
+
+.btn {
+	@apply flex justify-center items-center transition-colors md:bg-white/0 border border-white/0 bg-white/10 rounded-xl px-6 py-2 font-medium;
+}
+.btn:hover {
+	@apply bg-white/20 cursor-pointer md:bg-white/10;
+}
+.btn.btn-empty {
+	@apply bg-white text-orange-500;
+}
+.btn.btn-empty:hover {
+	@apply bg-orange-50;
+}
+.btn.btn-outlined {
+	@apply bg-white border-orange-500 border-2 text-orange-500;
+}
+.btn.btn-outlined:hover {
+	@apply bg-orange-50;
+}
+.btn.btn-filtered {
+	@apply bg-white border-neutral-200 border-2;
+}
+.btn.btn-filtered:hover,
+.btn.btn-filtered.active {
+	@apply bg-orange-50 border-orange-500 text-orange-500;
+}
+.btn.btn-primary {
+	@apply bg-linear-to-r from-orange-500 to-red-500 text-white;
+}
+.btn.btn-primary:hover {
+	@apply bg-linear-to-r from-red-500 to-red-500;
+}
+.btn-large {
+	@apply py-3;
+}
+.card {
+	@apply min-w-4 min-h-4 transition-shadow duration-500 overflow-hidden shadow-lg rounded-2xl bg-white;
+}
+.card:hover {
+	@apply shadow-xl;
+}
+.tag {
+	@apply rounded-2xl px-3 font-medium p-1 text-xs;
+}
