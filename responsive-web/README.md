@@ -41,12 +41,12 @@ npm install
 
 ```bash
 npm install lucide-react
-npm install -D tailwindcss@next @tailwindcss/vite@next
+npm install -D tailwindcss @tailwindcss/vite
 ```
 
 ### Step 3: Configure Tailwind CSS 4
 
-Create `vite.config.ts`:
+Edit `vite.config.ts`:
 
 ```typescript
 import { defineConfig } from 'vite';
@@ -64,19 +64,6 @@ Replace `src/index.css` with:
 
 ```css
 @import 'tailwindcss';
-
-@custom-variant dark (&:where(.dark, .dark *));
-@custom-variant container (@container);
-
-@theme {
-	/* Container query breakpoints */
-	--container-xs: 20rem;
-	--container-sm: 24rem;
-	--container-md: 28rem;
-	--container-lg: 32rem;
-	--container-xl: 36rem;
-	--container-2xl: 42rem;
-}
 ```
 
 ### Step 5: Test Setup
